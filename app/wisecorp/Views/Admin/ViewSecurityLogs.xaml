@@ -1,0 +1,76 @@
+<Page x:Class="wisecorp.Views.ViewSecurityLogs"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:wisecorp.Views" 
+    xmlns:viewmodel="clr-namespace:wisecorp.ViewModels"
+    xmlns:behaviors="clr-namespace:wisecorp.Behaviors"
+    d:DataContext="{d:DesignInstance Type=viewmodel:VMSecurityLogs}"
+    mc:Ignorable="d"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Style="{StaticResource {x:Type Page}}">
+
+    <Page.DataContext>
+        <viewmodel:VMSecurityLogs />
+    </Page.DataContext>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Margin="0,0,0,10">
+            <TextBox Width="200" Margin="0,0,10,0" materialDesign:HintAssist.Hint="{DynamicResource filterByCode}" Text="{Binding FilterCode, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Width="200" Margin="0,0,10,0" materialDesign:HintAssist.Hint="{DynamicResource filterByIp}" Text="{Binding FilterIp, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Width="200" Margin="0,0,10,0" materialDesign:HintAssist.Hint="{DynamicResource filterByAccountID}" Text="{Binding FilterAccountId, UpdateSourceTrigger=PropertyChanged, TargetNullValue=''}" />
+            <DatePicker Width="200" Margin="0,0,10,0" materialDesign:HintAssist.Hint="{DynamicResource filterByDate}" SelectedDate="{Binding FilterDate, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,0,0" Panel.ZIndex="10">
+            <Button Command="{Binding RefreshCommand}" Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryLightButton}">
+                <materialDesign:PackIcon Kind="Refresh" Foreground="{DynamicResource MaterialDesign.Brush.Secondary.Light.Foreground}" Width="20" Height="20"/>
+            </Button>
+            <Button Command="{Binding ClearFiltersCommand}" Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryLightButton}" Margin="10,0,0,0">
+                <materialDesign:PackIcon Kind="FilterRemove" Foreground="{DynamicResource MaterialDesign.Brush.Secondary.Light.Foreground}" Width="20" Height="20"/>
+            </Button>
+        </StackPanel>
+
+        <ProgressBar Grid.Row="1" Grid.ColumnSpan="2" IsIndeterminate="True" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+        <DataGrid Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding SecurityLogs}" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,0,10"
+                  ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                  MouseDoubleClick="SecurityLogsDataGrid_MouseDoubleClick" RowHeight="35">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{DynamicResource code}" Binding="{Binding Code}" />
+                <DataGridTextColumn Header="{DynamicResource desription}" Binding="{Binding Description}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding HasMoreInfo}" Value="True">
+                                    <Setter Property="TextDecorations" Value="Underline" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="{DynamicResource date}" Binding="{Binding Ip}" />
+                <DataGridTextColumn Header="{DynamicResource accountId}" Binding="{Binding AccountId}" />
+                <DataGridTextColumn Header="{DynamicResource ip}" Binding="{Binding Date}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <Button Content="{DynamicResource previous}" Command="{Binding PreviousPageCommand}" IsEnabled="{Binding CanGoToPreviousPage}" Margin="0,0,10,0"/>
+            <TextBlock VerticalAlignment="Center" Text="{Binding CurrentPage}" Margin="0,0,10,0"/>
+            <Button Content="{DynamicResource next}" Command="{Binding NextPageCommand}" IsEnabled="{Binding CanGoToNextPage}" />
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,53 @@
+<Page x:Class="wisecorp.Views.ViewSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:wisecorp.Views" mc:Ignorable="d"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Style="{StaticResource {x:Type Page}}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <materialDesign:Card Grid.Row="0" Margin="10,10,10,10" Padding="10" Grid.ColumnSpan="2">
+            <TextBlock Text="{DynamicResource settings}"
+                Style="{DynamicResource MaterialDesignBody1TextBlock}" />
+        </materialDesign:Card>
+
+        <!-- Settings Content -->
+        <materialDesign:Card Grid.Row="1" Margin="10,10,10,10" Padding="10" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- Language Selection -->
+                <ComboBox Grid.Row="0" Margin="5" Width="200"
+                    ItemsSource="{Binding Languages}"
+                    SelectedItem="{Binding Language}" />
+
+                <!-- Theme Selection -->
+                <ComboBox Grid.Row="1" Margin="5" Width="200"
+                    ItemsSource="{Binding Themes}"
+                    SelectedItem="{Binding Theme}" />
+
+                <!-- Primary Color -->
+                <ComboBox Grid.Row="2" Margin="5" Width="200"
+                    ItemsSource="{Binding PrimaryColors}"
+                    SelectedItem="{Binding PrimaryColor}" />
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Page>

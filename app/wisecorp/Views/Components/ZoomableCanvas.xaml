@@ -1,0 +1,24 @@
+<UserControl x:Class="wisecorp.Views.Components.ZoomableCanvas"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:wisecorp.Views" 
+    mc:Ignorable="d"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:behaviors="clr-namespace:wisecorp.Behaviors"
+    >
+    <ScrollViewer x:Name="GraphScrollViewer"
+                  HorizontalScrollBarVisibility="Hidden"
+                  VerticalScrollBarVisibility="Hidden"
+                  PreviewMouseWheel="GraphScrollViewer_PreviewMouseWheel">
+        <Canvas x:Name="movingCanvas"
+                Background="{DynamicResource MaterialDesignPaper}"
+                MouseWheel="GraphCanvas_MouseWheel"
+                MouseDown="GraphCanvas_MouseDown"
+                MouseMove="GraphCanvas_MouseMove"
+                MouseUp="GraphCanvas_MouseUp"
+                ClipToBounds="False">
+        </Canvas>
+    </ScrollViewer>
+</UserControl>

@@ -1,0 +1,63 @@
+<Page x:Class="wisecorp.Views.ViewLogin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:wisecorp.Views" 
+    xmlns:viewmodel="clr-namespace:wisecorp.ViewModels"
+    xmlns:behaviors="clr-namespace:wisecorp.Behaviors"
+    d:DataContext="{d:DesignInstance Type=viewmodel:VMLogin}"
+    mc:Ignorable="d"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Style="{StaticResource {x:Type Page}}">
+    
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <materialDesign:Card Grid.Row="0" Margin="10" Padding="10">
+            <TextBlock Text="{DynamicResource login}"
+                Style="{DynamicResource MaterialDesignBody1TextBlock}" />
+        </materialDesign:Card>
+
+        <!-- Settings Content -->
+        <materialDesign:Card Grid.Row="1" Margin="10" Padding="10">
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Text="{DynamicResource email}" TextAlignment="Right" Margin="0,0,25,0"></TextBlock>
+                <TextBox materialDesign:HintAssist.Hint="courriel@wisecorp.com" Grid.Row="0" Text="{Binding Email}" Grid.Column="1" Width="150" TextAlignment="Left"></TextBox>
+
+                <TextBlock Grid.Row="1" Text="{DynamicResource password}" TextAlignment="Right" Margin="0,25,25,0"></TextBlock>
+                <PasswordBox materialDesign:HintAssist.Hint="Mots de passe" Grid.Row="1" Grid.Column="1" Width="150" Margin="0,25,0,0" x:Name="PasswordBox" behaviors:PasswordBehavior.IsAttached="True"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{DynamicResource iForgotMyPassword}" TextAlignment="Right" Margin="0,5,0,0" TextDecorations="Underline" Foreground="{DynamicResource MaterialDesignBody}" Cursor="Hand">
+                    <TextBlock.InputBindings>
+                        <MouseBinding Gesture="LeftClick" Command="{Binding ForgotPasswordCommand}" />
+                    </TextBlock.InputBindings>
+                </TextBlock>
+
+                <TextBlock Grid.Row="3"  Grid.ColumnSpan="2" Foreground="Red" Text="{Binding ErrorMessage, UpdateSourceTrigger=PropertyChanged}" />
+
+                <CheckBox Content="{DynamicResource rememberMe}" IsChecked="{Binding RememberMe}" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                <Button Grid.Row="5" Grid.ColumnSpan="2" IsDefault="True" Cursor="Hand" Content="{DynamicResource loginBtn}" Command="{Binding Login}" Width="150" Margin="0,25,0,0"></Button>
+            
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Page>

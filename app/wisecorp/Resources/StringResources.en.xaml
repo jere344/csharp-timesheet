@@ -1,0 +1,183 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="timeSheet">Time Sheet</system:String>
+    <system:String x:Key="entreprise">WiseCorp Inc.</system:String>
+    <system:String x:Key="entrepriseShort">WiseCorp</system:String>
+    <system:String x:Key="entrepriseSentence">Revolutionize time sheets</system:String>
+
+    <system:String x:Key="settings">Settings</system:String>
+    <system:String x:Key="yourAccount">Your Account</system:String>
+    <system:String x:Key="fullName">Full Name</system:String>
+    <system:String x:Key="salary">Salary</system:String>
+    <system:String x:Key="departement">Departement</system:String>
+    <system:String x:Key="title">Title</system:String>
+    <system:String x:Key="isEnabled">Is Enabled</system:String>
+    <system:String x:Key="employmentDate">Employment Date</system:String>
+    <system:String x:Key="disableDate">Disable Date</system:String>
+    <system:String x:Key="password">Password</system:String>
+    <system:String x:Key="phone">Phone</system:String>
+    <system:String x:Key="email">Email</system:String>
+    <system:String x:Key="nbHour">Hours per week</system:String>
+    <system:String x:Key="hourBank">Hour Bank</system:String>
+    <system:String x:Key="login">Connection</system:String>
+    <system:String x:Key="loginBtn">Login</system:String>
+    <system:String x:Key="uploadPicture">Upload Picture</system:String>
+    <system:String x:Key="personalEmail">Personal Email</system:String>
+    <system:String x:Key="role">Role</system:String>
+    <system:String x:Key="pseudo">Pseudo</system:String>
+    <system:String x:Key="ajoutTitre">Create an account</system:String>
+    <system:String x:Key="archive">Archive</system:String>
+    <system:String x:Key="createBtn">Create</system:String>
+    <system:String x:Key="saveBtn">Save</system:String>
+    <system:String x:Key="addBtn">Add an account</system:String>
+    <system:String x:Key="isEnable">Account active</system:String>
+    <system:String x:Key="editAccountTittle">Edit an Account</system:String>
+    <system:String x:Key="hireDate">Hire Date</system:String>
+    <system:String x:Key="displayDisabled">Display disabled accounts</system:String>
+    <system:String x:Key="btnLogin">Logout</system:String>
+    <system:String x:Key="rememberMe">Remember me</system:String>
+    <system:String x:Key="admin">Admin</system:String>
+    <system:String x:Key="addAccount">Add an account</system:String>
+    <system:String x:Key="profile">Profile</system:String>
+    <system:String x:Key="logout">Logout</system:String>
+    <system:String x:Key="delete">Delete</system:String>
+    <system:String x:Key="edit">Edit</system:String>
+    <system:String x:Key="cancel">Cancel</system:String>
+    <system:String x:Key="confirm">Confirm</system:String>
+    <system:String x:Key="save">Save</system:String>
+    <system:String x:Key="search">Search</system:String>
+    <system:String x:Key="deleteImage">Delete Picture</system:String>
+    <system:String x:Key="deleteImageMessage">Do you want to delete the user profile picture?</system:String>
+    <system:String x:Key="confirmDeposit">Do you want to deposit the timesheet? You will not be able to modify it after.</system:String>
+    <system:String x:Key="confirmDepositTitle">Confirm deposit</system:String>
+    <system:String x:Key="securityLogs">Security Logs</system:String>
+    <system:String x:Key="filterByCode">Filter by Code</system:String>
+    <system:String x:Key="filterByIp">Filter by IP</system:String>
+    <system:String x:Key="filterByAccountID">Filter by Account ID</system:String>
+    <system:String x:Key="filterByDate">Filter by Date</system:String>
+
+    <system:String x:Key="previous">Previous</system:String>
+    <system:String x:Key="next">Next</system:String>
+    <system:String x:Key="ip">IP</system:String>
+    <system:String x:Key="accountId">Account ID</system:String>
+    <system:String x:Key="date">Date</system:String>
+    <system:String x:Key="current">Current</system:String>
+    <system:String x:Key="deletedProjects">Deleted Projects</system:String>
+
+    <system:String x:Key="currentWeek">Current week</system:String>
+    <system:String x:Key="nextWeek">Next Week</system:String>
+    <system:String x:Key="pastWeek">Past Week</system:String>
+    <system:String x:Key="savehourBtn">Save hours</system:String>
+    <system:String x:Key="totalHour">Total Hours :</system:String>
+
+    <system:String x:Key="projectName">Project Name</system:String>
+    <system:String x:Key="dimanche">Sunday</system:String>
+    <system:String x:Key="lundi">Monday</system:String>
+    <system:String x:Key="mardi">Tuesday</system:String>
+    <system:String x:Key="mercredi">Wednesday</system:String>
+    <system:String x:Key="jeudi">Thursday</system:String>
+    <system:String x:Key="vendredi">Friday</system:String>
+    <system:String x:Key="samedi">Saturday</system:String>
+
+    <system:String x:Key="timeSheetTitle">TimeSheet of {0} from {1} to {2}</system:String>
+
+    <system:String x:Key="depositeBtn">Deposite TimeSheet</system:String>
+
+    <system:String x:Key="iForgotMyPassword">I forgot my password</system:String>
+    <system:String x:Key="resetPassword">Reset Password</system:String>
+    <system:String x:Key="sendCode">Send Code</system:String>
+    <system:String x:Key="code">Code</system:String>
+    <system:String x:Key="newPassword">New Password</system:String>
+    <system:String x:Key="confirmPassword">Confirm Password</system:String>
+
+    <system:String x:Key="assignProjects">Assign Projects</system:String>
+    <system:String x:Key="projects">Projects</system:String>
+    <system:String x:Key="assignAccount">Assign Account</system:String>
+    <system:String x:Key="assignedAccounts">Assigned</system:String>
+    <system:String x:Key="unassignedAccounts">Unassigned</system:String>
+    <system:String x:Key="assignDepartement">Assign Departement</system:String>
+    <system:String x:Key="assignedDepartements">Assigned</system:String>
+    <system:String x:Key="unassignedDepartements">Unassigned</system:String>
+    <system:String x:Key="assignments">Assignments</system:String>
+ 
+    <system:String x:Key="assignDepartment">Assign Department</system:String>
+    <system:String x:Key="assignedDepartments">Assigned Departments</system:String>
+    <system:String x:Key="unassignedDepartments">Unassigned Departments</system:String>
+
+    <system:String x:Key="ajouterProjets">Add a project</system:String>
+    <system:String x:Key="nom">Project name</system:String>
+    <system:String x:Key="description">Project details</system:String>
+    <system:String x:Key="datedebut">Start date</system:String>
+    <system:String x:Key="datefin">End date</system:String>
+    <system:String x:Key="budget">Budget</system:String>
+    <system:String x:Key="nbHourP">Amout of hours</system:String>
+    <system:String x:Key="projettache">This is a task</system:String>
+    <system:String x:Key="projetparent">Parent project</system:String>
+
+    <system:String x:Key="manageProjects">Manage Projects</system:String>
+    <system:String x:Key="addSubProject">Add a sub project</system:String>
+    <system:String x:Key="deleteSelectedProject">Delete selected project</system:String>
+    <system:String x:Key="restoreSelectedProject">Restore selected project</system:String>
+    <system:String x:Key="cannotEditSelectedProject">You cannot edit this project</system:String>
+    <system:String x:Key="treeDisplayMode">Tree View</system:String>
+    <system:String x:Key="graphDisplayMode">Graph View</system:String>
+
+    <system:String x:Key="must_be_connected">You must be connected to access this feature</system:String>
+    <system:String x:Key="no_permission">You don't have the permission to access this feature</system:String>
+    <system:String x:Key="account_disabled">Your account is disabled. Please contact your administrator.</system:String>
+    <system:String x:Key="check_email_verification">Check your email for the verification code</system:String>
+    <system:String x:Key="password_updated">Password updated successfully</system:String>
+    <system:String x:Key="no_user_connected">No user connected</system:String>
+    <system:String x:Key="exporting_timesheet">Exporting timesheet</system:String>
+    <system:String x:Key="changes_saved">Changes have been saved</system:String>
+    <system:String x:Key="select_employee_to_modify">Select an employee to modify</system:String>
+    <system:String x:Key="cannot_assign_accounts">Cannot assign accounts to a disabled project</system:String>
+    <system:String x:Key="cannot_unassign_accounts">Cannot unassign accounts from a disabled project</system:String>
+    <system:String x:Key="cannot_assign_departments">Cannot assign departments to a disabled project</system:String>
+    <system:String x:Key="cannot_unassign_departments">Cannot unassign departments from a disabled project</system:String>
+    <system:String x:Key="delete_project_confirmation_no_hours">This project doesn't have any hours attached, do you want to delete it permanently?</system:String>
+    <system:String x:Key="delete_project_confirmation">Are you sure you want to delete this project?</system:String>
+    <system:String x:Key="restore_project_disabled_parent">You can't restore this project because one of its parent is disabled.</system:String>
+    <system:String x:Key="duplicate_project_confirmation">This project has {0} subprojects, are you sure you want to duplicate it? You will have to delete each subproject manually.</system:String>
+    <system:String x:Key="error">Error</system:String>
+    <system:String x:Key="delete_project">Delete project</system:String>
+    <system:String x:Key="restore_project">Restore project</system:String>
+    <system:String x:Key="duplicate_project">Duplicate project</system:String>
+    <system:String x:Key="set_password">Set a password</system:String>
+    <system:String x:Key="set_password_tooltip">If no password is set, the employee will be required to reset their password to connect to their account.</system:String>
+    <system:String x:Key="password_hint">Password</system:String>
+    <system:String x:Key="move_hours_to_subproject">There are hours worked attached to this project. Creating a subproject will move these hours to the new subproject. Do you want to continue?</system:String>
+    <system:String x:Key="move_hours">Move hours</system:String>
+
+    <system:String x:Key="tsApproved">Your timesheet has been approved</system:String>
+    <system:String x:Key="tsRejected">Your timesheet has been rejected</system:String>
+    <system:String x:Key="tsPending">Your timesheet is pending approval</system:String>
+
+    <system:String x:Key="reasonForRefusal">Reason for refusal</system:String>
+    <system:String x:Key="pleaseEnterReason">Please enter the reason for refusal:</system:String>
+    <system:String x:Key="submit">Submit</system:String>
+    <system:String x:Key="reason">Reason</system:String>
+    <system:String x:Key="reasonForRefusalTitle">Reason for refusal</system:String>
+    <system:String x:Key="approveTimeSheet">Approve TimeSheet</system:String>
+
+
+    <system:String x:Key="reject">Previously rejected</system:String>
+    <system:String x:Key="projectId">Project ID</system:String>
+
+
+    <system:String x:Key="sundayHour">Sunday Hours</system:String>
+    <system:String x:Key="mondayHour">Monday Hours</system:String>
+    <system:String x:Key="tuesdayHour">Tuesday Hours</system:String>
+    <system:String x:Key="wednesdayHour">Wednesday Hours</system:String>
+    <system:String x:Key="thursdayHour">Thursday Hours</system:String>
+    <system:String x:Key="fridayHour">Friday Hours</system:String>
+    <system:String x:Key="saturdayHour">Saturday Hours</system:String>
+
+    <system:String x:Key="approve">Approve</system:String>
+    <system:String x:Key="refuse">Refuse</system:String>
+
+    <system:String x:Key="desription">Desciption</system:String>
+
+
+</ResourceDictionary>

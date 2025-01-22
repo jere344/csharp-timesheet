@@ -1,0 +1,179 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="timeSheet">Feuille de temps</system:String>
+    <system:String x:Key="entreprise">WiseCorp Inc.</system:String>
+    <system:String x:Key="entrepriseShort">WiseCorp</system:String>
+    <system:String x:Key="entrepriseSentence">Révolutionne les feuilles de temps</system:String>
+
+    <system:String x:Key="settings">Paramètres</system:String>
+    <system:String x:Key="yourAccount">Votre compte</system:String>
+    <system:String x:Key="fullName">Nom complet</system:String>
+    <system:String x:Key="salary">Salaire</system:String>
+    <system:String x:Key="departement">Département</system:String>
+    <system:String x:Key="title">Titre</system:String>
+    <system:String x:Key="isEnabled">Est activé</system:String>
+    <system:String x:Key="employmentDate">Date d'embauche</system:String>
+    <system:String x:Key="disableDate">Date de désactivation</system:String>
+    <system:String x:Key="password">Mot de passe</system:String>
+    <system:String x:Key="phone">Téléphone</system:String>
+    <system:String x:Key="email">Courriel</system:String>
+    <system:String x:Key="nbHour">Heures par semaine</system:String>
+    <system:String x:Key="hourBank">Solde d'heures</system:String>
+    <system:String x:Key="login">Connexion</system:String>
+    <system:String x:Key="loginBtn">Se connecter</system:String>
+    <system:String x:Key="uploadPicture">Télécharger une image</system:String>
+    <system:String x:Key="personalEmail">Courriel personnel</system:String>
+    <system:String x:Key="role">Rôle</system:String>
+    <system:String x:Key="pseudo">Pseudo</system:String>
+    <system:String x:Key="ajoutTitre">Créer un compte</system:String>
+    <system:String x:Key="createBtn">Créer</system:String>
+    <system:String x:Key="saveBtn">Sauvegarder</system:String>
+    <system:String x:Key="addBtn">Ajouter un compte</system:String>
+    <system:String x:Key="isEnable">Compte actif</system:String>
+    <system:String x:Key="editAccountTittle">Moddifier un compte</system:String>
+    <system:String x:Key="hireDate">Date d'embauche</system:String>
+    <system:String x:Key="displayDisabled">Afficher les comptes désactivés</system:String>
+    <system:String x:Key="btnLogin">Déconnexion</system:String>
+    <system:String x:Key="rememberMe">Se souvenir de moi</system:String>
+    <system:String x:Key="admin">Admin</system:String>
+    <system:String x:Key="addAccount">Ajouter un compte</system:String>
+    <system:String x:Key="archive">Archiver</system:String>
+    <system:String x:Key="profile">Profil</system:String>
+    <system:String x:Key="logout">Déconnexion</system:String>
+    <system:String x:Key="delete">Supprimer</system:String>
+    <system:String x:Key="edit">Modifier</system:String>
+    <system:String x:Key="cancel">Annuler</system:String>
+    <system:String x:Key="confirm">Confirmer</system:String>
+    <system:String x:Key="save">Sauvegarder</system:String>
+    <system:String x:Key="search">Rechercher</system:String>
+    <system:String x:Key="deleteImage">Supprimer l'image</system:String>
+    <system:String x:Key="deleteImageMessage">Voulez-vous supprimer l'image de profil de l'utilisateur?</system:String>
+    <system:String x:Key="confirmDeposit">Voulez-vous déposer la feuille de temps? Vous ne pourrez plus la modifier après.</system:String>
+    <system:String x:Key="confirmDepositTitle">Confirmer le dépôt</system:String>
+    <system:String x:Key="securityLogs">Journaux de sécurité</system:String>
+    <system:String x:Key="filterByCode">Filtrer par code</system:String>
+    <system:String x:Key="filterByIp">Filtrer par IP</system:String>
+    <system:String x:Key="filterByAccountID">Filtrer par ID de compte</system:String>
+    <system:String x:Key="filterByDate">Filtrer par date</system:String>
+
+    <system:String x:Key="previous">Précédent</system:String>
+    <system:String x:Key="next">Suivant</system:String>
+    <system:String x:Key="ip">IP</system:String>
+    <system:String x:Key="accountId">ID du compte</system:String>
+    <system:String x:Key="date">Date</system:String>
+    <system:String x:Key="current">Actuel</system:String>
+    <system:String x:Key="deletedProjects">Projets supprimés</system:String>
+
+    <system:String x:Key="currentWeek">Semaine en cours</system:String>
+    <system:String x:Key="nextWeek">Semaine prochaine</system:String>
+    <system:String x:Key="pastWeek">Semaine passée</system:String>
+    <system:String x:Key="savehourBtn">Enregistrer les heures</system:String>
+    <system:String x:Key="totalHour">Total d'heure : </system:String>
+
+    <system:String x:Key="projectName">Nom du Projet</system:String>
+    <system:String x:Key="dimanche">Dimanche</system:String>
+    <system:String x:Key="lundi">Lundi</system:String>
+    <system:String x:Key="mardi">Mardi</system:String>
+    <system:String x:Key="mercredi">Mercredi</system:String>
+    <system:String x:Key="jeudi">Jeudi</system:String>
+    <system:String x:Key="vendredi">Vendredi</system:String>
+    <system:String x:Key="samedi">Samedi</system:String>
+
+    <system:String x:Key="timeSheetTitle">Feuille de temps de {0} du {1} au {2}</system:String>
+    <system:String x:Key="depositeBtn">Remettre la feuille</system:String>
+
+    <system:String x:Key="iForgotMyPassword">J'ai oublié mon mot de passe</system:String>
+    <system:String x:Key="resetPassword">Réinitialiser le mot de passe</system:String>
+    <system:String x:Key="sendCode">Envoyer le code</system:String>
+    <system:String x:Key="code">Code</system:String>
+    <system:String x:Key="newPassword">Nouveau mot de passe</system:String>
+    <system:String x:Key="confirmPassword">Confirmer le mot de passe</system:String>
+
+    <system:String x:Key="assignProjects">Assigner des projets</system:String>
+    <system:String x:Key="projects">Projets</system:String>
+    <system:String x:Key="assignAccount">Assigner un compte</system:String>
+    <system:String x:Key="assignedAccounts">Assignés</system:String>
+    <system:String x:Key="unassignedAccounts">Non assignés</system:String>
+    <system:String x:Key="assignDepartement">Assigner un département</system:String>
+    <system:String x:Key="assignedDepartements">Assignés</system:String>
+    <system:String x:Key="unassignedDepartements">Non assignés</system:String>
+    <system:String x:Key="assignments">Assignations</system:String>
+
+
+    <system:String x:Key="ajouterProjets">Ajouter un projet</system:String>
+    <system:String x:Key="nom">Nom du projets</system:String>
+    <system:String x:Key="description">Description du projets</system:String>
+    <system:String x:Key="datedebut">Date début</system:String>
+    <system:String x:Key="datefin">Date fin</system:String>
+    <system:String x:Key="budget">Budget</system:String>
+    <system:String x:Key="nbHourP">Nombre d'heure</system:String>
+    <system:String x:Key="projettache">Ce projet est une tache</system:String>
+    <system:String x:Key="projetparent">Projet parent</system:String>
+
+    <system:String x:Key="manageProjects">Gestion des projets</system:String>
+    <system:String x:Key="addSubProject">Ajouter un sous-projet</system:String>
+    <system:String x:Key="deleteSelectedProject">Supprimer le projet sélectionné</system:String>
+    <system:String x:Key="restoreSelectedProject">Restaurer le projet sélectionné</system:String>
+    <system:String x:Key="cannotEditSelectedProject">Vous ne pouvez pas modifier ce projet</system:String>
+    <system:String x:Key="treeDisplayMode">Affichage en arbre</system:String>
+    <system:String x:Key="graphDisplayMode">Affichage en graphique</system:String>
+
+    <system:String x:Key="must_be_connected">Vous devez être connecté pour accéder à cette fonctionnalité</system:String>
+    <system:String x:Key="no_permission">Vous n'avez pas la permission d'accéder à cette fonctionnalité</system:String>
+    <system:String x:Key="account_disabled">Votre compte est désactivé. Veuillez contacter votre administrateur.</system:String>
+    <system:String x:Key="check_email_verification">Vérifiez votre email pour le code de vérification</system:String>
+    <system:String x:Key="password_updated">Mot de passe mis à jour avec succès</system:String>
+    <system:String x:Key="no_user_connected">Aucun utilisateur connecté</system:String>
+    <system:String x:Key="exporting_timesheet">Exportation de la feuille de temps</system:String>
+    <system:String x:Key="changes_saved">Les modifications ont été enregistrées</system:String>
+    <system:String x:Key="select_employee_to_modify">Sélectionnez un employé à modifier</system:String>
+    <system:String x:Key="cannot_assign_accounts">Impossible d'attribuer des comptes à un projet désactivé</system:String>
+    <system:String x:Key="cannot_unassign_accounts">Impossible de retirer des comptes d'un projet désactivé</system:String>
+    <system:String x:Key="cannot_assign_departments">Impossible d'attribuer des départements à un projet désactivé</system:String>
+    <system:String x:Key="cannot_unassign_departments">Impossible de retirer des départements d'un projet désactivé</system:String>
+    <system:String x:Key="delete_project_confirmation_no_hours">Ce projet n'a pas d'heures attachées, voulez-vous le supprimer définitivement ?</system:String>
+    <system:String x:Key="delete_project_confirmation">Êtes-vous sûr de vouloir supprimer ce projet ?</system:String>
+    <system:String x:Key="restore_project_disabled_parent">Vous ne pouvez pas restaurer ce projet car un de ses parents est désactivé.</system:String>
+    <system:String x:Key="duplicate_project_confirmation">Ce projet a {0} sous-projets, êtes-vous sûr de vouloir le dupliquer ? Vous devrez supprimer chaque sous-projet manuellement.</system:String>
+    <system:String x:Key="error">Erreur</system:String>
+    <system:String x:Key="delete_project">Supprimer le projet</system:String>
+    <system:String x:Key="restore_project">Restaurer le projet</system:String>
+    <system:String x:Key="duplicate_project">Dupliquer le projet</system:String>
+    <system:String x:Key="set_password">Définir un mot de passe</system:String>
+    <system:String x:Key="set_password_tooltip">Si aucun mot de passe n'est défini, l'employé devra réinitialiser son mot de passe pour se connecter à son compte.</system:String>
+    <system:String x:Key="password_hint">Mot de passe</system:String>
+    <system:String x:Key="move_hours_to_subproject">Il y a des heures travaillées attachées à ce projet. La création d'un sous-projet déplacera ces heures vers le nouveau sous-projet. Voulez-vous continuer ?</system:String>
+    <system:String x:Key="move_hours">Déplacer les heures</system:String>
+
+    <system:String x:Key="tsApproved">Votre feuille de temps a été approuvée</system:String>
+    <system:String x:Key="tsRejected">Votre feuille de temps a été rejetée</system:String>
+    <system:String x:Key="tsPending">Votre feuille de temps est en attente d'approbation</system:String>
+
+    <system:String x:Key="reasonForRefusal">Raison du refus</system:String>
+    <system:String x:Key="reasonForRefusalPlaceholder">Veuillez entrer la raison du refus</system:String>
+    <system:String x:Key="submit">Soumettre</system:String>
+    <system:String x:Key="reasonForRefusalTitle">Raison du refus</system:String>
+    <system:String x:Key="approveTimeSheet">Approuver la feuille de temps</system:String>
+
+
+
+    <system:String x:Key="reject">Rejeter précédament</system:String>
+    <system:String x:Key="projectId">ID du projet</system:String>
+
+
+    <system:String x:Key="sundayHour">Heure dimanche</system:String>
+    <system:String x:Key="mondayHour">Heure lundi</system:String>
+    <system:String x:Key="tuesdayHour">Heure mardi</system:String>
+    <system:String x:Key="wednesdayHour">Heure mercredi</system:String>
+    <system:String x:Key="thursdayHour">Heure jeudi</system:String>
+    <system:String x:Key="fridayHour">Heure vendedi</system:String>
+    <system:String x:Key="saturdayHour">Heure samedi</system:String>
+
+    <system:String x:Key="approve">Approuver</system:String>
+    <system:String x:Key="refuse">Refuser</system:String>
+
+    <system:String x:Key="desription">Desciption</system:String>
+
+
+</ResourceDictionary>

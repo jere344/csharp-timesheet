@@ -1,0 +1,16 @@
+
+<Window x:Class="wisecorp.Views.ReasonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Reason for Refusal" Height="200" Width="400">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="{DynamicResource reasonForRefusal}" Margin="10"/>
+            <TextBox x:Name="ReasonTextBox" Margin="10"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                <Button Content="{DynamicResource submit}" Click="OnSubmit" Margin="5"/>
+                <Button Content="{DynamicResource cancel}" Click="OnCancel" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="wisecorp.Views.AddHour"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wisecorp.Views"
+        xmlns:viewmodel="clr-namespace:wisecorp.ViewModels"        
+        d:DataContext="{d:DesignInstance Type=viewmodel:VMAddHour}"       
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        Title="AddHour" Height="100" Width="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        
+        <TextBox Text="{Binding Hour, StringFormat=N2}" Margin="20,0,0,0" PreviewMouseDown="SelectAll" GotFocus="GotFocus" TextChanged="NumericMaxValue" PreviewTextInput="NumberValidation" materialDesign:HintAssist.Hint="0" Grid.Column="0" x:Name="HourBox" KeyDown="HourBox_KeyDown" />
+        <TextBox Text="{Binding Comment}" Grid.Column="1" materialDesign:HintAssist.Hint="Écrire un commentaire" TextWrapping="Wrap" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"/>
+
+        <Button Grid.Column="2" Click="Save_Click">
+            <materialDesign:PackIcon Kind="ContentSave" />
+        </Button>
+    </Grid>
+</Window>

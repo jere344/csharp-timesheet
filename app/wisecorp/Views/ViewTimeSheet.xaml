@@ -1,0 +1,298 @@
+<Page
+    x:Class="wisecorp.Views.ViewTimeSheet"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:wisecorp.Views" 
+    xmlns:viewmodel="clr-namespace:wisecorp.ViewModels"
+    xmlns:behaviors="clr-namespace:wisecorp.Behaviors"
+    d:DataContext="{d:DesignInstance Type=viewmodel:VMTimeSheet}"
+    mc:Ignorable="d"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Style="{StaticResource {x:Type Page}}">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- this is anarchic, but for some reason row height completely breaks with rowspan and calendars -->
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Column="0">
+                <!-- title -->
+                <materialDesign:Card Margin="10,10,10,10" Padding="11">
+                    <TextBlock  Style="{DynamicResource MaterialDesignBody1TextBlock}" Text="{Binding Title}" />
+                </materialDesign:Card>
+                
+                <!-- employee information -->
+                <materialDesign:Card Margin="10" Padding="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Employee picture -->
+                        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" Margin="0,0,20,0" HorizontalAlignment="Left">
+                            <Image Width="230" Height="230" Margin="10" Source="{Binding Account.ProfilePicture}" />
+                        </StackPanel>
+
+                        <!-- Employee Information -->
+                        <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,0,0,0" HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal" Margin="0 5">
+                                <TextBlock FontWeight="Bold" FontSize="18" Text="{Binding Account.FullName}" />
+                                <TextBlock Text="{Binding Account.Pseudo}" Width="200" Margin="0,5,0,0" 
+                                                materialDesign:HintAssist.Hint="{DynamicResource pseudo}" />
+                            </StackPanel>
+
+                            <TextBlock FontWeight="Bold" FontSize="16" Text="{DynamicResource employmentInformation}" />
+                            <StackPanel Orientation="Horizontal" Margin="0 5">
+                                <TextBlock Text="{DynamicResource role}" Width="120" />
+                                <TextBlock Text="{Binding Account.Role.Name}" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 5">
+                                <TextBlock Text="{DynamicResource departement}" Width="120" />
+                                <TextBlock Text="{Binding Account.Departement.Name}" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 5">
+                                <TextBlock Text="{DynamicResource title}" Width="120" />
+                                <TextBlock Text="{Binding Account.Title.Name}" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 5">
+                                <TextBlock Text="{DynamicResource nbHour}" Width="120" />
+                                <TextBlock Text="{Binding Account.NbHour}" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 5">
+                                <TextBlock Text="{DynamicResource hourBank}" Width="120" />
+                                <TextBlock Text="{Binding Account.HourBank}" />
+                            </StackPanel>
+                        </StackPanel>
+
+                    </Grid>
+                </materialDesign:Card>
+            </StackPanel>
+
+            <!-- calendar -->
+            <Grid Grid.Column="1">
+                <materialDesign:Card Margin="10,10,10,10" Padding="8,5,8,5" MaxHeight="340">
+                    <Calendar 
+                        SelectedDate="{Binding BeforeSelectedDate}" 
+                        DisplayMode="Month" 
+                        SelectionMode="SingleDate" 
+                        FirstDayOfWeek="Sunday" 
+                        Margin="0,0,0,0" 
+                        materialDesign:HintAssist.Hint="{DynamicResource selectWeek}" 
+                        SelectedDatesChanged="Calendar_SelectedDatesChanged"
+                        />
+
+                </materialDesign:Card>
+                <Button 
+                    Command="{Binding ApplySelectedDateCommand}" 
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Height="25"
+                    Width="40"
+                    Padding="0"
+                    Margin="0, 0, 10, 10"
+                    IsEnabled="{Binding CanApplySelectedDate}"
+                    >
+                    <materialDesign:PackIcon Width="20" Height="20" Kind="CalendarArrowRight"
+                        Foreground="{DynamicResource MaterialDesign.Brush.Primary.Dark.Foreground}"/>
+                </Button>
+                
+            </Grid>
+
+        </Grid>
+
+        <!-- time sheet -->
+        <materialDesign:Card Grid.Row="2" Margin="10" Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+            
+                <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <!-- projects -->
+                        <ItemsControl ItemsSource="{Binding RootProjectTasks}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0,0,0,15">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="175"/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+
+                                        <TextBlock Margin="0,0,0,0" Text="{Binding MainProject.Name}" Grid.Column="0" Grid.Row="0"/>
+                                        
+                                        <TextBlock Text="{DynamicResource dimanche}" Grid.Column="1"/>
+                                        
+                                        <TextBlock Text="{DynamicResource lundi}" Grid.Column="2"/>
+                                        
+                                        <TextBlock Text="{DynamicResource mardi}" Grid.Column="3"/>
+                                        
+                                        <TextBlock Text="{DynamicResource mercredi}" Grid.Column="4"/>
+                                        
+                                        <TextBlock Text="{DynamicResource jeudi}" Grid.Column="5"/>
+                                    
+                                        <TextBlock Text="{DynamicResource vendredi}" Grid.Column="6"/>
+
+
+                                        <TextBlock Text="{DynamicResource samedi}" Grid.Column="7"/>
+
+                                        <ItemsControl ItemsSource="{Binding Works}" Grid.Row="1" Margin="15,15,0,0" Grid.ColumnSpan="8">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="175"/>
+                                                            <ColumnDefinition/>
+                                                            <ColumnDefinition/>
+                                                            <ColumnDefinition/>
+                                                            <ColumnDefinition/>
+                                                            <ColumnDefinition/>
+                                                            <ColumnDefinition/>
+                                                            <ColumnDefinition/>
+
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Margin="25,0,0,0" Text="{Binding Project.Name}" Grid.Column="0"/>
+
+                                                        <Button Click="OpenHourWindow" Tag="1" IsEnabled="{Binding IsEnabled}" Grid.Column="1">
+                                                            <TextBlock Text="{Binding HourWorkedSun, StringFormat=N2}"/>
+                                                        </Button>
+
+                                                        <Button Click="OpenHourWindow" Tag="2" IsEnabled="{Binding IsEnabled}" Grid.Column="2">
+                                                            <TextBlock Text="{Binding HourWorkedMon, StringFormat=N2}"/>
+                                                        </Button>
+
+                                                        <Button Click="OpenHourWindow" Tag="3" IsEnabled="{Binding IsEnabled}" Grid.Column="3">
+                                                            <TextBlock Text="{Binding HourWorkedTue, StringFormat=N2}"/>
+                                                        </Button>
+
+                                                        <Button Click="OpenHourWindow" Tag="4" IsEnabled="{Binding IsEnabled}" Grid.Column="4">
+                                                            <TextBlock Text="{Binding HourWorkedWed, StringFormat=N2}"/>
+                                                        </Button>
+
+                                                        <Button Click="OpenHourWindow" Tag="5" IsEnabled="{Binding IsEnabled}" Grid.Column="5">
+                                                            <TextBlock Text="{Binding HourWorkedThur, StringFormat=N2}"/>
+                                                        </Button>
+                                                        
+                                                        <Button Click="OpenHourWindow" Tag="6" IsEnabled="{Binding IsEnabled}" Grid.Column="6">
+                                                            <TextBlock Text="{Binding HourWorkedFri, StringFormat=N2}"/>
+                                                        </Button>
+                                                        
+                                                        <Button Click="OpenHourWindow" Tag="7" IsEnabled="{Binding IsEnabled}" Grid.Column="7">
+                                                            <TextBlock Text="{Binding HourWorkedSat, StringFormat=N2}"/>
+                                                        </Button>
+                                                        
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <!-- details on the right -->
+                 <StackPanel Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,70,0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5">
+                        <TextBlock Text="{DynamicResource CurrentWeek}" Width="120" />
+                        <TextBlock Text="{Binding CurrentWeek.Date}" />
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" >
+                        <TextBlock Text="{DynamicResource totalHour}" Margin="0,0,5,0"/>
+                        <TextBlock Text="{Binding TotalHour, StringFormat=N2}"/>
+                    </StackPanel>
+                </StackPanel>
+
+
+                <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="70,0,0,0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 5" Visibility="{Binding IsWeekApproved, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <TextBlock Text="{DynamicResource tsApproved}" Foreground="Green" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 5" Visibility="{Binding IsWeekPending, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <TextBlock Text="{DynamicResource tsPending}" Foreground="Orange"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="0 5" Visibility="{Binding IsWeekRejectedAndNotApproved, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <TextBlock Text="{DynamicResource tsRejected}" Foreground="Red"/>
+                        <TextBlock Text="{Binding RejectedReason}" Margin="0,0,5,0" />
+                    </StackPanel>
+                </StackPanel>
+
+            </Grid>
+        </materialDesign:Card>
+
+        <!-- buttons : -->
+        <DockPanel Grid.Row="0" Grid.RowSpan="3"  Margin="10,10,10,10" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Vertical">
+                <!-- 3 dot menu open additional options -->
+                <ToggleButton Width="55" Height="55" Style="{StaticResource MaterialDesignActionLightToggleButton}" IsChecked="{Binding ShowAdditionalActions}" Margin="10,10,10,0" >
+                    <materialDesign:PackIcon Width="30" Height="30" Kind="DotsVertical" />
+                </ToggleButton>
+
+                <!-- additional options -->
+                <Border CornerRadius="10" Background="{DynamicResource MaterialDesignPaper}"
+                    Visibility="{Binding ShowAdditionalActions, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <StackPanel Orientation="Vertical"  >
+                        <Button Command="{Binding ExportToXlsxCommand}" Cursor="Hand" Margin="10" ToolTip="{DynamicResource exportToXlsx}"
+                                materialDesign:HintAssist.Hint="{DynamicResource exportToXlsx}">
+                            <materialDesign:PackIcon Kind="MicrosoftExcel" />
+                        </Button>
+                        <Button Command="{Binding ExportPdfCommand}" Cursor="Hand" Margin="10" ToolTip="{DynamicResource exportToPdf}"
+                                materialDesign:HintAssist.Hint="{DynamicResource exportToPdf}">
+                            <materialDesign:PackIcon Kind="FilePdfBox" />
+                        </Button>
+                    </StackPanel>
+                </Border>
+
+                <!-- if available, show save in red -->
+                <Button 
+                    Style="{StaticResource MaterialDesignFloatingActionLightButton}" 
+                    Background="Red"
+                    ToolTip="{DynamicResource savehourBtn}" 
+                    Command="{Binding SaveHour}" 
+                    Margin="10" 
+                    Visibility="{Binding CanSaveHours, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    BorderBrush="Red"
+                    >
+                    <materialDesign:PackIcon Width="30" Height="30" Kind="ContentSaveAlertOutline"
+                        Foreground="{DynamicResource MaterialDesign.Brush.Primary.Light.Foreground}"/>
+                        
+                </Button>
+
+                <Button 
+                    Style="{StaticResource MaterialDesignFloatingActionLightButton}" 
+                    ToolTip="{DynamicResource depositeBtn}" 
+                    Command="{Binding DepositeTimeSheet}" 
+                    Margin="10" 
+                    Visibility="{Binding CanDeposit, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <materialDesign:PackIcon Width="20" Height="20" Kind="SendVariantOutline"/>
+                </Button>
+                 
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Page>

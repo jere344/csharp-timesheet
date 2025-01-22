@@ -1,0 +1,128 @@
+<Page x:Class="wisecorp.Views.ViewProfile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:wisecorp.Views" mc:Ignorable="d"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Style="{StaticResource {x:Type Page}}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- 
+        Role : Role : read-only 
+        FullName : string : read-only
+        Salary : decimal : read-only
+        Departement : Departement : read-only
+        Title : string : read-only
+        IsEnabled : bool : read-only
+        EmploymentDate : DateTime : read-only
+        DisableDate : DateTime : read-only, nullable
+        Password : null hidden
+        Phone : string : read-write
+        Email : string : read-write
+        NbHour : decimal : read-only
+        HourBank : decimal : read-only
+        -->
+
+        <!-- Header -->
+        <materialDesign:Card Grid.Row="0" Margin="10" Padding="10">
+            <TextBlock Text="{DynamicResource yourAccount}"
+                Style="{DynamicResource MaterialDesignBody1TextBlock}" />
+        </materialDesign:Card>
+
+        <!-- Profile Content -->
+        <materialDesign:Card Grid.Row="1" Margin="20" Padding="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <!-- Profile and Picture -->
+                    <RowDefinition Height="Auto" />
+                    <!-- Divider -->
+                    <RowDefinition Height="Auto" />
+                    <!-- Employment and Contact Information -->
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Profile Picture and Name -->
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0 10" Grid.ColumnSpan="3">
+                    <Image Width="150" Height="150" Margin="10" Source="{Binding ProfilePicture}" />
+                    <StackPanel Margin="10">
+                        <TextBlock FontWeight="Bold" FontSize="18" Text="{Binding FullName}" />
+                        <TextBox Text="{Binding Pseudo}" Width="200" Margin="0,5,0,0" 
+                                materialDesign:HintAssist.Hint="{DynamicResource pseudo}" />
+                        <Button Content="{DynamicResource uploadPicture}" Command="{Binding UploadPictureCommand}" 
+                                Margin="0,10,0,0" Width="200" HorizontalAlignment="Left" 
+                                Style="{StaticResource MaterialDesignFlatButton}" />
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Divider -->
+                <Rectangle Grid.Row="1" Grid.ColumnSpan="3" Height="1" Fill="Gray" Margin="0,20" />
+
+                <!-- Employment Information -->
+                <StackPanel Grid.Row="2" Grid.Column="0" Margin="0 10">
+                    <TextBlock FontWeight="Bold" FontSize="16" Text="{DynamicResource employmentInformation}" />
+                    <StackPanel Orientation="Horizontal" Margin="0 5">
+                        <TextBlock Text="{DynamicResource role}" Width="120" />
+                        <TextBlock Text="{Binding Role.Name}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 5">
+                        <TextBlock Text="{DynamicResource departement}" Width="120" />
+                        <TextBlock Text="{Binding Departement.Name}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 5">
+                        <TextBlock Text="{DynamicResource title}" Width="120" />
+                        <TextBlock Text="{Binding Title}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 5">
+                        <TextBlock Text="{DynamicResource employmentDate}" Width="120" />
+                        <TextBlock Text="{Binding EmploymentDate}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 5">
+                        <TextBlock Text="{DynamicResource salary}" Width="120" />
+                        <TextBlock Text="{Binding Salary}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 5">
+                        <TextBlock Text="{DynamicResource nbHour}" Width="120" />
+                        <TextBlock Text="{Binding NbHour}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 5">
+                        <TextBlock Text="{DynamicResource hourBank}" Width="120" />
+                        <TextBlock Text="{Binding HourBank}" />
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Vertical Divider -->
+                <Rectangle Grid.Row="2" Grid.Column="1" Width="1" Fill="Gray" Margin="10" />
+
+                <!-- Contact Information -->
+                <StackPanel Grid.Row="2" Grid.Column="2" Margin="0 10">
+                    <TextBlock FontWeight="Bold" FontSize="16" Text="{DynamicResource contactInformation}" />
+                    <StackPanel Orientation="Horizontal" Margin="0 5">
+                        <TextBlock Text="{DynamicResource email}" Width="120" />
+                        <TextBlock Text="{Binding Email}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 5">
+                        <TextBlock Text="{DynamicResource personalEmail}" Width="120" />
+                        <TextBox materialDesign:HintAssist.Hint="courriel@domaine.com" Text="{Binding PersonalEmail}" Width="200" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 5">
+                        <TextBlock Text="{DynamicResource phone}" Width="120" />
+                        <TextBox materialDesign:HintAssist.Hint="581 306 3896" Text="{Binding Phone}" Width="200" />
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </materialDesign:Card>
+
+
+    </Grid>
+</Page>

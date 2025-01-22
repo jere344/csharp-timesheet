@@ -1,0 +1,68 @@
+<Page x:Class="wisecorp.Views.ViewAssignProjects"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:wisecorp.Views" 
+    mc:Ignorable="d"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Style="{StaticResource {x:Type Page}}"
+    d:DataContext="{d:DesignInstance Type=viewmodel:VMAssignProjects}"
+    xmlns:viewmodel="clr-namespace:wisecorp.ViewModels"
+    xmlns:behaviors="clr-namespace:wisecorp.Behaviors"
+    xmlns:Components="clr-namespace:wisecorp.Views.Components"
+    >
+
+     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <materialDesign:Card Grid.Row="0" Margin="10,10,10,10" Padding="10" Grid.ColumnSpan="2">
+            <TextBlock Text="{DynamicResource assignProjects}"
+                Style="{DynamicResource MaterialDesignBody1TextBlock}" />
+        </materialDesign:Card>
+
+        <!-- Assign Projects Content -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- list of projects -->
+            <materialDesign:Card Grid.Column="0" Margin="10,10,10,10" Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Text="{DynamicResource projects}"
+                        Style="{DynamicResource MaterialDesignBody1TextBlock}" />
+                    <ListView Grid.Row="1" ItemsSource="{Binding Projects}" SelectedItem="{Binding SelectedProject}" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding GetTruncatedFullProjectTree}" TextTrimming="CharacterEllipsis">
+                                        <TextBlock.ToolTip>
+                                            <ToolTip>
+                                                <TextBlock Text="{Binding GetFullProjectTree}" TextWrapping="Wrap"/>
+                                            </ToolTip>
+                                        </TextBlock.ToolTip>
+                                    </TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </materialDesign:Card>
+
+            <Components:AssignPanelControl Grid.Column="1" DataContext="{Binding DataContext, RelativeSource={RelativeSource AncestorType=Page}}" />
+        </Grid>
+
+    
+    </Grid>
+</Page>
