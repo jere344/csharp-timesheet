@@ -44,3 +44,36 @@ A timesheet and project management software written in C# wpf using material des
 <img src="https://github.com/user-attachments/assets/de86fbf9-d56e-4123-90e9-4ce649f586e1" width=50% height=50%>
 
 
+## Project Management
+- 2 ways to manage projects :
+- In a tree-like structure 
+<img src="https://github.com/user-attachments/assets/15a6615a-4691-49a0-b373-759bfc2d236f" width=50% height=50%>
+
+- In a graph structure
+
+<img src="https://github.com/user-attachments/assets/6b000c68-ab58-47d6-8a4a-b68be7d0f062" width=50% height=50%>
+
+> The graph and navigable canvas was completely hand made on a simple canvas with buttons, path, coordinate.
+- Can move a whole project branch and its subproject to another project 
+<img src="https://github.com/user-attachments/assets/bf6e15c7-1cc4-4325-9d05-78697a7030c3" width=30% height=30%>
+<img src="https://github.com/user-attachments/assets/877f3745-f68e-40d3-a7e8-5ee489b39a7b" width=30% height=30%>
+
+> Here the project "test 25" was assigned as a sub project of "test" with its sub projects kept, editing the access permissions as well
+
+
+- Click on a project to open and edit infos
+
+<img src="https://github.com/user-attachments/assets/d6bf4da6-4edd-4458-a8b8-48d988c4d048" width=50% height=50%>
+
+- Assign people to a project
+
+<img src="https://github.com/user-attachments/assets/b70a8540-a19e-4c93-87a8-7b451428d867" width=50% height=50%>
+
+> Assigning someone to a project and editing it can only be done by the admins or managers that are assigned to the project or created it  
+> Assigning someone to a project give him access to all sub tasks of the project  
+> We can show/hide disabled projects  
+> We can assign a whole departement to a project  
+> Able to dupplicate or disable a whole branch  
+> We keep anb history of all worked hour, and a project can only be deleted if it has no worked hour. Project with hours worked on are only disabled and still shows up in employees times sheets  
+
+
