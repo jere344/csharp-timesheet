@@ -2,7 +2,12 @@
 
 A timesheet and project management software written in C# wpf using material design.  
 I do not recommend using it for production as no one is maintaining it, it was a 2-month school project. But you can use it however  you want.  
-I did my best to make the graph and canvas system easily importable into a new project with similar feature. Check out the ZoomableCanvas component `app\wisecorp\Views\Components\zoomableCanvas` and the Tree and ProjectTree component in `app\wisecorp\Models\Graphs`  
+  
+I did my best to make the graph and canvas system easily importable into a new project with similar feature.  
+For that, check out 
+- the ZoomableCanvas `app\wisecorp\Views\Components\zoomableCanvas`
+- the Tree and ProjectTree in `app\wisecorp\Models\Graphs`  
+- the ViewManageProject `app\wisecorp\Views\Manager\ViewManageProject`
 
 ## Navigation system
 
