@@ -76,4 +76,18 @@ A timesheet and project management software written in C# wpf using material des
 > Able to dupplicate or disable a whole branch  
 > We keep anb history of all worked hour, and a project can only be deleted if it has no worked hour. Project with hours worked on are only disabled and still shows up in employees times sheets  
 
+## The time sheet
+<img src="https://github.com/user-attachments/assets/bfe3e264-efea-4c62-9bce-26f49ced576c" width=50% height=50%>
+
+- Allow adding hours and comments worked on each project on each day. The send button is replaced with a save after a change
+<img src="https://github.com/user-attachments/assets/1a65410a-37bb-4a0e-b1d9-4a521d55d548" width=50% height=50%>
+
+- Can export the time sheet as a xlsx or pdf file
+<img src="https://github.com/user-attachments/assets/7d25a448-66db-4945-a24d-b7b15ab1143d" width=50% height=50%>
+
+## More feature
+Admins and manager can approve time sheets, or refuse with a motif allowing the employing to send another demand.  
+The admin can create an account with a random password sent to the user by mail, or with a custom password. The user will be prompted to edit it's password on first login  
+There are more features not included in this document. you can build it for yourself to explore features, simply edit the appsettings.json with a working database and build it.  
+
 
