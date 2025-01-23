@@ -107,7 +107,13 @@ ProjectTree is the implementation of the generic Tree class for csharp-timesheet
 
 ## More feature
 Admins and manager can approve time sheets, or refuse with a motif allowing the employing to send another demand.  
-The admin can create an account with a random password sent to the user by mail, or with a custom password. The user will be prompted to edit it's password on first login  
-There are more features not included in this document. you can build it for yourself to explore features, simply edit the appsettings.json with a working database and build it.  
+The admin can create an account with a random password sent to the user by mail, or with a custom password. The user will be prompted to edit its password on first login  
+There are more features not included in this document. You can build it for yourself to explore features, simply edit the appsettings.json with a working database and build it.  
+
+## How to build
+- Download the zip
+- open the app solution in visual studio
+- edit appsettings.json with your credentials and database
+- execute the project a few time to setup the database with migrations
 
 
