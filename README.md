@@ -1,4 +1,4 @@
-# wisecorp-timesheet
+# csharp-timesheet
 
 A timesheet and project management software written in C# wpf using material design.  
 I do not recommend using it for production as no one is maintaining it, it was a 2-month school project. But you can use it however  you want.  
@@ -9,6 +9,7 @@ For that, check out
 - the Tree and ProjectTree in `app\wisecorp\Models\Graphs`  
 - the ViewManageProject `app\wisecorp\Views\Manager\ViewManageProject`
 
+> Not afiliated or related to wisecorp, I had no idea it was an actual company.
 
 - [wisecorp-timesheet](#wisecorp-timesheet)
    * [Navigation system](#navigation-system)
