@@ -114,7 +114,8 @@ There are more features not included in this document. You can build it for your
 ## How to build
 - Download the zip
 - open the app solution in visual studio
-- edit appsettings.json with your credentials and database
+- edit appsettings.json with your credentials and database connection string
 - execute the project a few time to setup the database with migrations
+- default database only has an admin with email : `admin` and password : `admin`
 
 
