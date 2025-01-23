@@ -21,6 +21,7 @@ ProjectTree is the implementation of the generic Tree class for csharp-timesheet
    * [Project Management](#project-management)
    * [The time sheet](#the-time-sheet)
    * [More feature](#more-feature)
+   * [How to build](#how-to-build)
 
 ## Navigation system
 
