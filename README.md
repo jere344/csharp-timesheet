@@ -9,6 +9,8 @@ For that, check out
 - the Tree and ProjectTree in `app\wisecorp\Models\Graphs`  
 - the ViewManageProject `app\wisecorp\Views\Manager\ViewManageProject`
 
+ProjectTree is the implementation of the generit Tree class for csharp-timesheet. ZoomableCanvas is a canvas you can move around and zoom in/out. ViewManageProject is where the implementation of the view using the graph start.
+
 > Not afiliated or related to wisecorp, I had no idea it was an actual company.
 
 - [wisecorp-timesheet](#wisecorp-timesheet)
